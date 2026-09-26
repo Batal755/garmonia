@@ -262,6 +262,9 @@
   .avatar{ width:clamp(140px,24vw,210px); aspect-ratio:1; border-radius:50%; background:radial-gradient(circle at 35% 30%, var(--pine-2), var(--pine-deep)); display:grid; place-items:center; position:relative; box-shadow:0 20px 50px -24px rgba(14,36,27,.6); }
   .avatar::after{ content:""; position:absolute; inset:9px; border-radius:50%; border:1px solid var(--brass); opacity:.55; }
   .avatar span{ font-family:var(--f-display); font-size:clamp(3.2rem,8vw,5.2rem); color:var(--brass-lt); line-height:1; }
+  .portrait{ margin:0; position:relative; width:clamp(220px,30vw,340px); }
+  .portrait::before{ content:""; position:absolute; inset:14px -14px -14px 14px; border:1px solid var(--brass); border-radius:6px; opacity:.6; }
+  .portrait img{ position:relative; display:block; width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; border-radius:6px; box-shadow:0 30px 60px -30px rgba(14,36,27,.6); }
   .role{ color:var(--brass); font-weight:700; letter-spacing:.16em; text-transform:uppercase; font-size:.74rem; }
   .author h2{ font-size:clamp(1.9rem,4.5vw,2.8rem); margin-top:10px; }
   .creds{ list-style:none; margin:1rem 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px; }
@@ -345,6 +348,7 @@
     .mbar{ display:flex; }
     footer{ padding-bottom:calc(110px + env(safe-area-inset-bottom,0px)); }
     .author .grid{ grid-template-columns:1fr; }
+    .portrait{ width:min(320px,80%); }
   }
   @media (max-width:560px){
     body{ font-size:16px; }
@@ -660,7 +664,7 @@
 <section class="section author" id="avtor" style="padding-top:0">
   <div class="wrap">
     <div class="grid">
-      <div class="avatar reveal" aria-hidden="true"><span>М</span></div>
+      <figure class="portrait reveal"><img src="author.jpg" alt="Мухаммад Маммотоколов" width="800" height="1000" loading="lazy"></figure>
       <div class="reveal d1">
         <span class="role">Автор потока</span>
         <h2>Мухаммад Маммотоколов</h2>
