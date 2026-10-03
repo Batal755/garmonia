@@ -12,7 +12,7 @@
 <meta property="og:locale" content="ru_RU">
 <meta property="og:url" content="https://batal755.github.io/garmonia/">
 <meta property="og:title" content="Гармония общения — новый поток">
-<meta property="og:description" content="Как мужчине и женщине снова услышать друг друга. Старт 1–5 октября. «Стандарт» — 4 900 ₽, «Премиум» — 9 900 ₽, VIP — 14 900 ₽.">
+<meta property="og:description" content="Как мужчине и женщине снова услышать друг друга. Старт 1–5 октября. Четыре тарифа: от 4 900 ₽ до персональной работы с наставником.">
 <meta property="og:image" content="https://batal755.github.io/garmonia/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -155,7 +155,7 @@
   .hero-meta span{ display:block; font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--cream-soft); margin-top:4px; }
 
   /* ---------- «знакомо?» ---------- */
-  .pairs{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:40px; }
+  .pairs{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; margin-top:40px; }
   .pair{ background:var(--paper-2); border:1px solid var(--line); border-radius:var(--radius); padding:26px 24px; }
   .pair .one{ font-weight:700; color:var(--pine); font-size:1.05rem; }
   .pair .vs{ display:block; height:1px; background:var(--line); margin:18px 0; position:relative; }
@@ -167,7 +167,7 @@
   /* ---------- о потоке ---------- */
   .promise{ background:var(--pine); color:var(--cream); }
   .promise .grid{ display:grid; grid-template-columns:1.15fr 1fr; gap:clamp(28px,6vw,80px); align-items:center; }
-  .promise .big{ font-family:var(--f-display); font-size:clamp(1.65rem,3.8vw,2.7rem); font-weight:500; line-height:1.22; text-wrap:balance; }
+  .promise .big{ font-family:var(--f-display); font-size:clamp(1.5rem,3.2vw,2.3rem); font-weight:500; line-height:1.22; text-wrap:balance; }
   .promise .big em{ font-style:italic; color:var(--brass-lt); }
   .promise .side{ color:var(--cream-soft); font-size:1.05rem; line-height:1.7; }
   .promise .rule{ width:44px; height:2px; background:var(--brass); margin-bottom:20px; }
@@ -229,10 +229,20 @@
     font-weight:600; font-size:.95rem;
   }
   .start-badge i{ width:8px; height:8px; border-radius:50%; background:var(--brass); box-shadow:0 0 0 4px rgba(181,138,68,.2); }
-  .plans{ display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:44px; align-items:stretch; }
+  .plans{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:44px; align-items:stretch; }
+  .plans .plan{ padding:28px 24px; }
+  .plans .plan h3{ font-size:1.45rem; }
+  .plans .tag{ display:block; min-height:2.9em; line-height:1.45; }
+  .plans .price{ font-size:clamp(2.1rem,3.4vw,2.6rem); margin:1rem 0 0; }
+  .plans .dots{ margin:.8rem 0 1.6rem; font-size:.95rem; }
+  .plans .inc{ margin-top:1.2rem; }
   .plan{ border-radius:8px; padding:clamp(28px,4vw,42px); display:flex; flex-direction:column; }
   .plan.online{ background:#FAFAF6; border:1px solid var(--line); }
   .plan.offline-l{ background:#FAFAF6; border:1.5px solid var(--brass); }
+  .plan .who{ margin-top:1.1rem; color:var(--ink-soft); font-size:.98rem; line-height:1.55; }
+  .plan.offline .who{ color:var(--cream-soft); }
+  .plan .motto{ font-family:var(--f-display); font-style:italic; color:var(--pine); font-size:1.08rem; line-height:1.45; margin:-.4rem 0 1.6rem; }
+  .plan.offline .motto{ color:var(--brass-lt); }
   .plan .inc{ font-size:.82rem; font-weight:700; color:var(--pine); margin-top:1.4rem; }
   .plan.offline .inc{ color:var(--brass-lt); }
   .plan .inc + .dots{ margin-top:.8rem; padding-top:0; border-top:0; }
@@ -334,15 +344,14 @@
   html.js .reveal.d3{ transition-delay:.24s; }
 
   /* ---------- адаптив ---------- */
-  @media (max-width:1060px) and (min-width:901px){
-    .plan{ padding:26px 22px; }
-    .price{ font-size:2.4rem; }
+  @media (max-width:1100px) and (min-width:601px){
+    .plans{ grid-template-columns:repeat(2,1fr) !important; max-width:none !important; }
   }
   @media (max-width:900px){
     .promise .grid,.outcomes .grid{ grid-template-columns:1fr; }
     .enroll .card{ grid-template-columns:1fr; }
     .pairs,.format .grid,.plans,.perks{ grid-template-columns:1fr; }
-    .plans{ max-width:520px; margin-inline:auto; }
+    .plans{ max-width:560px; margin-inline:auto; }
   }
   @media (max-width:700px){
     .mbar{ display:flex; }
@@ -386,15 +395,15 @@
   <div class="wrap">
     <span class="eyebrow">Новый поток · старт 1–5 октября</span>
     <h1>Гармония<br><em>общения</em></h1>
-    <p class="hero-sub">Курс о том, как мужчине и женщине снова услышать друг друга — и построить союз, в котором вы одна команда.</p>
-    <p class="hero-hook">Почему близкие люди перестают слышать друг друга?</p>
+    <p class="hero-sub">Курс о том, как перестать бороться друг с другом, сохранить близость даже в разногласиях и построить отношения, в которых хорошо обоим.</p>
+    <p class="hero-hook">Порой нас не слышат и не ценят по нашей вине…</p>
     <div class="hero-cta">
       <a href="https://t.me/fate_hacking_bot?start=garmonia" target="_blank" rel="noopener" class="btn btn-primary">Записаться на поток</a>
       <a href="#tarify" class="btn btn-ghost">Тарифы и цены</a>
     </div>
     <div class="hero-meta">
       <div><b>1–5 октября</b><span>Старт потока</span></div>
-      <div><b>Онлайн и Махачкала</b><span>Три тарифа</span></div>
+      <div><b>Онлайн и Махачкала</b><span>Четыре тарифа</span></div>
       <div><b>от 4 900 ₽</b><span>Стоимость участия</span></div>
     </div>
   </div>
@@ -406,22 +415,27 @@
     <span class="eyebrow reveal">Знакомо?</span>
     <div class="pairs">
       <div class="pair reveal d1">
-        <p class="one">Один говорит —</p>
+        <p class="one">Вы просите внимания —</p>
         <span class="vs"></span>
-        <p class="two">второй слышит претензию.</p>
+        <p class="two">партнёр слышит претензию.</p>
       </div>
       <div class="pair reveal d2">
-        <p class="one">Один замолкает, чтобы успокоиться, —</p>
+        <p class="one">Вы советуете, как лучше, —</p>
         <span class="vs"></span>
-        <p class="two">второй чувствует отвержение.</p>
+        <p class="two">партнёр принимает это за критику.</p>
       </div>
-      <div class="pair reveal d3">
-        <p class="one">Один хочет поддержки —</p>
+      <div class="pair reveal d1">
+        <p class="one">Вы не хотите спорить —</p>
         <span class="vs"></span>
-        <p class="two">другой сразу начинает давать советы.</p>
+        <p class="two">партнёр видит безразличие.</p>
+      </div>
+      <div class="pair reveal d2">
+        <p class="one">Вы уступаете —</p>
+        <span class="vs"></span>
+        <p class="two">партнёр думает, что так и надо.</p>
       </div>
     </div>
-    <p class="knowledge-note reveal">Мы часто думаем, что <b>умеем общаться</b>. Но в сложный момент снова обвиняем и не справляемся с эмоциями. Обижаемся. Закрываемся. Нападаем. Уходим в молчание.</p>
+    <p class="knowledge-note reveal">Иногда отношения разрушают не слова и действия, а <b>то, как мы их поняли</b>. Почему мы воспринимаем их так, как нам хочется?</p>
   </div>
 </section>
 
@@ -429,10 +443,10 @@
 <section class="section promise">
   <div class="wrap">
     <div class="grid">
-      <p class="big reveal">Поток <em>«Гармония общения»</em> поможет по-новому увидеть отношения между мужчиной и женщиной.</p>
+      <p class="big reveal">Поток <em>«Гармония общения»</em> поможет вам сохранять близость даже тогда, когда вы думаете, чувствуете и хотите по-разному.</p>
       <div class="side reveal d1">
         <div class="rule"></div>
-        Вы научитесь выстраивать диалог, который укрепляет союз и взаимное уважение, — вместо того, который годами копит обиды и отдаляет друг от друга.
+        Вы научитесь замечать своё Эго до того, как оно начнёт управлять отношениями. Не избегать сложных разговоров — а проходить их так, чтобы после них становиться ближе.
       </div>
     </div>
   </div>
@@ -529,7 +543,7 @@
       <div>
         <span class="eyebrow reveal">После потока</span>
         <h2 class="h2 reveal">Что изменится<br>в вашем общении</h2>
-        <p class="sub reveal d1">Вы начнёте лучше понимать себя и людей вокруг — и замечать выбор там, где раньше была только автоматическая реакция.</p>
+        <p class="sub reveal d1">Вы начнёте лучше понимать себя и людей вокруг — выбирать эффективное действие вместо автоматической реакции.</p>
       </div>
       <div class="checks">
         <div class="check reveal">
@@ -600,57 +614,70 @@
 <section class="section pricing" id="tarify">
   <div class="wrap">
     <div class="head">
-      <span class="eyebrow reveal">Тарифы</span>
-      <h2 class="h2 reveal">Выберите свой формат</h2>
+      <span class="eyebrow reveal">Тарифы участия</span>
+      <h2 class="h2 reveal">Как вам удобнее обучаться?</h2>
+      <p class="sub reveal d1" style="margin-inline:auto;max-width:52ch">Выберите комфортную глубину прохождения программы — от самостоятельного изучения до персональной работы с наставником курса.</p>
       <span class="start-badge reveal d1"><i></i>Старт потока — 1–5 октября</span>
     </div>
 
     <div class="plans">
-      <div class="plan online reveal">
-        <span class="tag">Онлайн</span>
-        <h3>Стандарт</h3>
+      <div class="plan online reveal d1">
+        <span class="tag">Изучать и применять</span>
+        <h3>Самостоятельный</h3>
         <div class="price">4 900<small>₽</small></div>
-        <p class="price-note">стоимость участия</p>
+        <p class="inc">В тариф входит:</p>
         <ul class="dots">
-          <li>Все уроки программы — 5 глав</li>
-          <li>Задания после каждого блока</li>
-          <li>Записи практических тренингов</li>
+          <li>Еженедельные уроки и задания</li>
+          <li>База уроков прошлых потоков</li>
+          <li>Сообщество и группа участников</li>
         </ul>
-        <a href="https://t.me/fate_hacking_bot?start=g_online" target="_blank" rel="noopener" class="btn btn-outline">Выбрать «Стандарт»</a>
+        <a href="https://t.me/fate_hacking_bot?start=g_online" target="_blank" rel="noopener" class="btn btn-outline">Выбрать</a>
+      </div>
+
+      <div class="plan online reveal d2">
+        <span class="tag">Тренировать навыки вживую</span>
+        <h3>Практика</h3>
+        <div class="price">9 900<small>₽</small></div>
+        <p class="inc">Всё из «Самостоятельного», плюс:</p>
+        <ul class="dots">
+          <li>Офлайн-тренинг раз в 2 недели</li>
+          <li>Отработка на реальных ситуациях</li>
+          <li>Упражнения в группе</li>
+        </ul>
+        <a href="https://t.me/fate_hacking_bot?start=g_offline" target="_blank" rel="noopener" class="btn btn-outline">Выбрать</a>
       </div>
 
       <div class="plan offline-l reveal d1">
-        <span class="tag">Онлайн + Махачкала</span>
-        <h3>Премиум</h3>
-        <div class="price">9 900<small>₽</small></div>
-        <p class="price-note">стоимость участия</p>
-        <p class="inc">Всё из «Стандарта», плюс:</p>
+        <span class="tag">Глубже понимать себя</span>
+        <h3>Погружение</h3>
+        <div class="price">14 900<small>₽</small></div>
+        <p class="inc">Всё из «Практики», плюс:</p>
         <ul class="dots">
-          <li>Живые встречи в Махачкале по выходным</li>
-          <li>Практические тренинги и разбор реальных ситуаций</li>
-          <li>Упражнения в парах и группах</li>
+          <li>Офлайн-встречи каждую неделю</li>
+          <li>Разбор фильмов и ситуаций</li>
+          <li>Глубокая работа с собой</li>
         </ul>
-        <a href="https://t.me/fate_hacking_bot?start=g_offline" target="_blank" rel="noopener" class="btn btn-outline">Выбрать «Премиум»</a>
+        <a href="https://t.me/fate_hacking_bot?start=g_premium" target="_blank" rel="noopener" class="btn btn-outline">Выбрать</a>
       </div>
 
       <div class="plan offline reveal d2">
-        <span class="badge">Максимум внимания</span>
-        <span class="tag" style="color:var(--brass-lt)">Всё + личная работа</span>
-        <h3>VIP</h3>
-        <div class="price">14 900<small>₽</small></div>
-        <p class="price-note">стоимость участия</p>
-        <p class="inc">Всё из «Премиума», плюс:</p>
+        <span class="tag" style="color:var(--brass-lt)">С наставником курса</span>
+        <h3>Персональный</h3>
+        <div class="price">29 900<small>₽</small></div>
+        <p class="inc">Всё из «Погружения», плюс:</p>
         <ul class="dots">
-          <li>Работа с вашими личными запросами по теме курса</li>
+          <li>Личная консультация и карта обучения</li>
+          <li>Еженедельная работа с наставником</li>
+          <li>Персональное сопровождение</li>
         </ul>
-        <a href="https://t.me/fate_hacking_bot?start=g_premium" target="_blank" rel="noopener" class="btn btn-primary">Выбрать VIP</a>
+        <a href="https://t.me/fate_hacking_bot?start=g_personal" target="_blank" rel="noopener" class="btn btn-primary">Выбрать</a>
       </div>
     </div>
 
     <div class="perks">
       <div class="perk reveal">
         <span class="ico">−15%</span>
-        <div><b>Семейной паре — скидка 15%</b><span>Для двоих: «Стандарт» — 8 330 ₽, «Премиум» — 16 830 ₽, VIP — 25 330 ₽. <a href="https://t.me/fate_hacking_bot?start=garmonia" target="_blank" rel="noopener">Записаться вдвоём</a></span></div>
+        <div><b>Семейной паре — скидка 15%</b><span>Для двоих: «Самостоятельный» — 8 330 ₽, «Практика» — 16 830 ₽, «Погружение» — 25 330 ₽, «Персональный» — 50 830 ₽. <a href="https://t.me/fate_hacking_bot?start=garmonia" target="_blank" rel="noopener">Записаться вдвоём</a></span></div>
       </div>
       <div class="perk reveal d1">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
@@ -664,14 +691,14 @@
 <section class="section author" id="avtor" style="padding-top:0">
   <div class="wrap">
     <div class="grid">
-      <figure class="portrait reveal"><img src="author.jpg" alt="Мухаммад Маммотоколов" width="800" height="1000" loading="lazy"></figure>
+      <figure class="portrait reveal"><img src="author.jpg" alt="Мухаммад Маматаколов" width="800" height="1000" loading="lazy"></figure>
       <div class="reveal d1">
         <span class="role">Автор потока</span>
-        <h2>Мухаммад Маммотоколов</h2>
+        <h2>Мухаммад Маматаколов</h2>
         <ul class="creds">
           <li>Журналист</li><li>Писатель</li><li>Психолог</li><li>20+ лет в сфере коммуникаций</li>
         </ul>
-        <p class="bio">Основатель проекта «Фэйтхакинг». В «Гармонии общения» — о зрелых отношениях, где исламские принципы отделены от адатов и стереотипов. Здесь не учат терпеть и молчать: здесь учат говорить так, чтобы вас услышали, и проходить разногласия, оставаясь одной командой.</p>
+        <p class="bio">Это будет очень мощный поток, где нет лекций об очевидных истинах, религиозных постулатах, правилах из учебников психологии и воды. Мы будем рушить декорации современных взглядов на отношения и строить настоящие формы гармоничного союза между мужчиной и женщиной.</p>
       </div>
     </div>
   </div>
@@ -686,9 +713,10 @@
         <h2>Займите место<br>на <em>новом потоке</em></h2>
         <div class="facts">
           <div><span>Старт</span><b>1–5 октября</b></div>
-          <div><span>Стандарт</span><b>4 900 ₽</b></div>
-          <div><span>Премиум</span><b>9 900 ₽</b></div>
-          <div><span>VIP</span><b>14 900 ₽</b></div>
+          <div><span>Самостоятельный</span><b>4 900 ₽</b></div>
+          <div><span>Практика</span><b>9 900 ₽</b></div>
+          <div><span>Погружение</span><b>14 900 ₽</b></div>
+          <div><span>Персональный</span><b>29 900 ₽</b></div>
         </div>
       </div>
       <div class="act">
@@ -711,7 +739,7 @@
       </details>
       <details class="qa">
         <summary>Чем отличаются тарифы?<span class="ic" aria-hidden="true"></span></summary>
-        <p class="ans">«Стандарт» — онлайн: уроки и задания в своём темпе, тренинги в записи. «Премиум» — всё из «Стандарта» плюс живые встречи в Махачкале по выходным: разбор реальных ситуаций и тренировка новых способов общения в парах и группах. VIP — всё из «Премиума» плюс личная работа с вашими запросами по теме курса.</p>
+        <p class="ans">«Самостоятельный» — изучать и применять: уроки, задания, база уроков и сообщество. «Практика» — тренировать навыки вживую: плюс офлайн-тренинг раз в две недели. «Погружение» — глубже понимать себя: офлайн-встречи каждую неделю, разборы фильмов и ситуаций. «Персональный» — всё это плюс индивидуальная программа и еженедельная личная работа с наставником курса.</p>
       </details>
       <details class="qa">
         <summary>Где проходят офлайн-встречи?<span class="ic" aria-hidden="true"></span></summary>
@@ -719,7 +747,7 @@
       </details>
       <details class="qa">
         <summary>Есть ли скидка, если мы идём вдвоём?<span class="ic" aria-hidden="true"></span></summary>
-        <p class="ans">Да, семейной паре скидка 15%. За двоих: «Стандарт» — 8 330 ₽ вместо 9 800 ₽, «Премиум» — 16 830 ₽ вместо 19 800 ₽, VIP — 25 330 ₽ вместо 29 800 ₽.</p>
+        <p class="ans">Да, семейной паре скидка 15%. За двоих: «Самостоятельный» — 8 330 ₽ вместо 9 800 ₽, «Практика» — 16 830 ₽ вместо 19 800 ₽, «Погружение» — 25 330 ₽ вместо 29 800 ₽, «Персональный» — 50 830 ₽ вместо 59 800 ₽.</p>
       </details>
       <details class="qa">
         <summary>Можно оплатить в рассрочку?<span class="ic" aria-hidden="true"></span></summary>
