@@ -224,6 +224,13 @@
   #tarify{ scroll-margin-top:56px; }
   .plans.flash .plan{ animation:flash 1.6s ease; }
   @keyframes flash{ 0%,100%{ box-shadow:0 0 0 0 rgba(181,138,68,0); } 35%{ box-shadow:0 0 0 4px rgba(181,138,68,.55); } }
+  .who-toggle{ display:flex; width:max-content; max-width:100%; margin:32px auto 0; padding:5px; gap:4px; border:1px solid var(--line); border-radius:999px; background:var(--paper-2); }
+  .who-toggle .wt{ font:inherit; font-weight:700; font-size:.95rem; border:0; background:transparent; color:var(--ink-soft); padding:.7em 1.3em; border-radius:999px; cursor:pointer; transition:background .25s,color .25s; }
+  .who-toggle .wt b{ color:var(--brass); }
+  .who-toggle .wt.active{ background:var(--pine); color:var(--cream); }
+  .who-toggle .wt.active b{ color:var(--brass-lt); }
+  .plans .price-note{ margin-top:.3rem; }
+  .plans .pv{ transition:opacity .2s; }
   .pricing .head{ text-align:center; display:flex; flex-direction:column; align-items:center; }
   .pricing .head .eyebrow::after{ content:""; width:26px; height:1px; background:currentColor; opacity:.7; }
   .start-badge{
@@ -623,11 +630,17 @@
       <span class="start-badge reveal d1"><i></i>Старт потока — 12 октября</span>
     </div>
 
+    <div class="who-toggle reveal" role="radiogroup" aria-label="Кто участвует">
+      <button type="button" class="wt active" data-mode="one" role="radio" aria-checked="true">Участвую один</button>
+      <button type="button" class="wt" data-mode="two" role="radio" aria-checked="false">Идём вдвоём <b>−15%</b></button>
+    </div>
+
     <div class="plans">
-      <div class="plan online reveal d1">
+      <div class="plan online reveal d1" data-key="g_online" data-one="4900" data-two="8330">
         <span class="tag">Изучать и применять</span>
         <h3>Самостоятельный</h3>
-        <div class="price">4 900<small>₽</small></div>
+        <div class="price"><span class="pv">4 900</span><small>₽</small></div>
+        <p class="price-note"><span class="pn">за одного участника</span></p>
         <p class="inc">В тариф входит:</p>
         <ul class="dots">
           <li>Еженедельные уроки и задания</li>
@@ -637,10 +650,11 @@
         <a href="https://t.me/fate_hacking_bot?start=g_online" class="btn btn-outline">Выбрать</a>
       </div>
 
-      <div class="plan online reveal d2">
+      <div class="plan online reveal d2" data-key="g_offline" data-one="9900" data-two="16830">
         <span class="tag">Тренировать навыки вживую</span>
         <h3>Практика</h3>
-        <div class="price">9 900<small>₽</small></div>
+        <div class="price"><span class="pv">9 900</span><small>₽</small></div>
+        <p class="price-note"><span class="pn">за одного участника</span></p>
         <p class="inc">Всё из «Самостоятельного», плюс:</p>
         <ul class="dots">
           <li>Офлайн-тренинг раз в 2 недели</li>
@@ -650,10 +664,11 @@
         <a href="https://t.me/fate_hacking_bot?start=g_offline" class="btn btn-outline">Выбрать</a>
       </div>
 
-      <div class="plan offline-l reveal d1">
+      <div class="plan offline-l reveal d1" data-key="g_premium" data-one="14900" data-two="25330">
         <span class="tag">Глубже понимать себя</span>
         <h3>Погружение</h3>
-        <div class="price">14 900<small>₽</small></div>
+        <div class="price"><span class="pv">14 900</span><small>₽</small></div>
+        <p class="price-note"><span class="pn">за одного участника</span></p>
         <p class="inc">Всё из «Практики», плюс:</p>
         <ul class="dots">
           <li>Офлайн-встречи каждую неделю</li>
@@ -663,10 +678,11 @@
         <a href="https://t.me/fate_hacking_bot?start=g_premium" class="btn btn-outline">Выбрать</a>
       </div>
 
-      <div class="plan offline reveal d2">
+      <div class="plan offline reveal d2" data-key="g_personal" data-one="29900" data-two="50830">
         <span class="tag" style="color:var(--brass-lt)">С наставником курса</span>
         <h3>Персональный</h3>
-        <div class="price">29 900<small>₽</small></div>
+        <div class="price"><span class="pv">29 900</span><small>₽</small></div>
+        <p class="price-note"><span class="pn">за одного участника</span></p>
         <p class="inc">Всё из «Погружения», плюс:</p>
         <ul class="dots">
           <li>Личная консультация и карта обучения</li>
@@ -680,11 +696,11 @@
     <div class="perks">
       <div class="perk reveal">
         <span class="ico">−15%</span>
-        <div><b>Семейной паре — скидка 15%</b><span>Для двоих: «Самостоятельный» — 8 330 ₽, «Практика» — 16 830 ₽, «Погружение» — 25 330 ₽, «Персональный» — 50 830 ₽. <a href="https://t.me/fate_hacking_bot?start=garmonia">Записаться вдвоём</a></span></div>
+        <div><b>Семейной паре — скидка 15%</b><span>Включите «Идём вдвоём» над тарифами — цены пересчитаются на двоих.</span></div>
       </div>
       <div class="perk reveal d1">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span>
-        <div><b>Рассрочка без переплат</b><span>Чтобы оформить, <a href="https://t.me/fate_hacking_bot?start=vopros">напишите автору курса</a>.</span></div>
+        <div><b>Рассрочка без переплат</b><span>Выберите тариф, а в боте нажмите «Вопрос автору» — Мухаммад ответит лично.</span></div>
       </div>
     </div>
   </div>
@@ -816,6 +832,26 @@
       p.classList.remove('flash'); setTimeout(function(){ p.classList.add('flash'); }, 650);
     });
   });
+
+  /* переключатель «один / вдвоём»: цены и кнопки «Выбрать» */
+  (function(){
+    var BOT = 'https://t.me/fate_hacking_bot?start=';
+    var fmt = function(n){ return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); };
+    function setMode(mode){
+      document.querySelectorAll('.who-toggle .wt').forEach(function(b){
+        var on = b.dataset.mode === mode; b.classList.toggle('active', on); b.setAttribute('aria-checked', on);
+      });
+      document.querySelectorAll('.plan[data-key]').forEach(function(card){
+        var two = mode === 'two';
+        card.querySelector('.pv').textContent = fmt(two ? card.dataset.two : card.dataset.one);
+        card.querySelector('.pn').textContent = two ? 'за двоих, со скидкой 15%' : 'за одного участника';
+        card.querySelector('a.btn').href = BOT + card.dataset.key + (two ? '2' : '');
+      });
+    }
+    document.querySelectorAll('.who-toggle .wt').forEach(function(b){
+      b.addEventListener('click', function(){ setMode(b.dataset.mode); });
+    });
+  })();
 
   /* появление секций */
   var items = document.querySelectorAll('.reveal');
