@@ -221,6 +221,9 @@
   .manifesto .pull{ margin:2.2rem auto 0; max-width:46ch; color:var(--cream-soft); font-size:1.06rem; line-height:1.7; }
 
   /* ---------- тарифы ---------- */
+  #tarify{ scroll-margin-top:56px; }
+  .plans.flash .plan{ animation:flash 1.6s ease; }
+  @keyframes flash{ 0%,100%{ box-shadow:0 0 0 0 rgba(181,138,68,0); } 35%{ box-shadow:0 0 0 4px rgba(181,138,68,.55); } }
   .pricing .head{ text-align:center; display:flex; flex-direction:column; align-items:center; }
   .pricing .head .eyebrow::after{ content:""; width:26px; height:1px; background:currentColor; opacity:.7; }
   .start-badge{
@@ -384,7 +387,7 @@
     <a href="#programma" class="link">Программа</a>
     <a href="#tarify" class="link">Тарифы</a>
     <a href="#avtor" class="link">Автор</a>
-    <a href="https://t.me/fate_hacking_bot?start=garmonia" class="btn-nav">Записаться</a>
+    <a href="#tarify" class="btn-nav">Записаться</a>
   </nav>
 </header>
 
@@ -398,8 +401,8 @@
     <p class="hero-sub">Курс о том, как перестать бороться друг с другом, сохранить близость даже в разногласиях и построить отношения, в которых хорошо обоим.</p>
     <p class="hero-hook">Порой нас не слышат и не ценят по нашей вине…</p>
     <div class="hero-cta">
-      <a href="https://t.me/fate_hacking_bot?start=garmonia" class="btn btn-primary">Записаться на поток</a>
-      <a href="#tarify" class="btn btn-ghost">Тарифы и цены</a>
+      <a href="#tarify" class="btn btn-primary">Записаться на поток</a>
+      <a href="#programma" class="btn btn-ghost">Смотреть программу</a>
     </div>
     <div class="hero-meta">
       <div><b>12 октября</b><span>Старт потока</span></div>
@@ -720,8 +723,8 @@
         </div>
       </div>
       <div class="act">
-        <a href="https://t.me/fate_hacking_bot?start=garmonia" class="btn btn-primary">Записаться на поток</a>
-        <span class="fine">Семейной паре — скидка 15%.<br>Рассрочка без переплат — по договорённости с автором.</span>
+        <a href="#tarify" class="btn btn-primary">Записаться на поток</a>
+        <span class="fine">Выберите тариф — кнопка «Выбрать» откроет оплату в Telegram.<br>Семейной паре — скидка 15%. Рассрочка без переплат.</span>
       </div>
     </div>
   </div>
@@ -775,7 +778,7 @@
         <p class="fine">Новый поток · старт 12 октября</p>
       </div>
       <div>
-        <a href="https://t.me/fate_hacking_bot?start=garmonia">Записаться на поток →</a>
+        <a href="#tarify">Записаться на поток →</a>
         <p class="fine" style="opacity:.7">© 2026 · Гармония общения</p>
       </div>
     </div>
@@ -785,7 +788,7 @@
 <!-- мобильная панель записи -->
 <div class="mbar" id="mbar">
   <div class="t"><b>от 4 900 ₽</b>Старт 12 октября</div>
-  <a href="https://t.me/fate_hacking_bot?start=garmonia" class="btn-nav">Записаться</a>
+  <a href="#tarify" class="btn-nav">Записаться</a>
 </div>
 
 <script>
@@ -799,11 +802,20 @@
     var y = window.scrollY;
     nav.classList.toggle('scrolled', y > 40);
     var pastHero = y > hero.offsetHeight - 80;
-    var r = enroll.getBoundingClientRect();
-    var atEnroll = r.top < window.innerHeight && r.bottom > 0;
+    var r = enroll.getBoundingClientRect(), t = document.getElementById('tarify').getBoundingClientRect();
+    var atEnroll = (r.top < window.innerHeight && r.bottom > 0) || (t.top < window.innerHeight * .6 && t.bottom > 120);
     mbar.classList.toggle('show', pastHero && !atEnroll);
   }
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+  /* переход к тарифам: подсветить плашки */
+  document.querySelectorAll('a[href="#tarify"]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var p = document.querySelector('.plans'); if (!p) return;
+      p.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+      p.classList.remove('flash'); setTimeout(function(){ p.classList.add('flash'); }, 650);
+    });
+  });
 
   /* появление секций */
   var items = document.querySelectorAll('.reveal');
